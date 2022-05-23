@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 
-import Card from "../components/UI/Card";
+import Card from "../components/Content/Card";
 
 export default function Home() {
   return (
