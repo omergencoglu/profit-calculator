@@ -4,7 +4,7 @@ const useInput = (validateValue) => {
   const [enteredValue, setEnteredValue] = useState("");
 
   const valueIsValid = validateValue(enteredValue);
-  const hasError = !valueIsValid;
+  const isNumber = !isNaN(enteredValue);
 
   const valueChangeHandler = (event) => {
     setEnteredValue(event.target.value);
@@ -17,7 +17,7 @@ const useInput = (validateValue) => {
   return {
     value: enteredValue,
     isValid: valueIsValid,
-    hasError,
+    isNumber,
     valueChangeHandler,
     reset,
   };

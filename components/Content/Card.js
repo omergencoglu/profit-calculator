@@ -1,11 +1,51 @@
+import useInput from "../../hooks/use-input";
+
 import Input from "../UI/Input";
 
 function Card() {
+  const {
+    value: enteredPurchasePrice,
+    isValid: purchasePriceIsValid,
+    isNumber: purchasePriceIsNumber,
+    valueChangeHandler: purchasePriceChangeHandler,
+    reset: purchasePriceReset,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredShippingFee,
+    isValid: shippingFeeIsValid,
+    isNumber: shippingFeeIsNumber,
+    valueChangeHandler: shippingFeeChangeHandler,
+    reset: shippingFeeReset,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredSellingPrice,
+    isValid: sellingPriceIsValid,
+    isNumber: sellingPriceIsNumber,
+    valueChangeHandler: sellingPriceChangeHandler,
+    reset: sellingPriceReset,
+  } = useInput((value) => value.trim() !== "");
+
+  console.log(sellingPriceIsNumber);
+
   return (
     <ul>
-      <Input name="Purchase Price" value="0" />
-      <Input name="Shipping Fee" value="0" />
-      <Input name="Selling Price" value="0" />
+      <Input
+        name="Purchase Price"
+        value={enteredPurchasePrice}
+        onChangeHandler={purchasePriceChangeHandler}
+      />
+      <Input
+        name="Shipping Fee"
+        value={enteredShippingFee}
+        onChangeHandler={shippingFeeChangeHandler}
+      />
+      <Input
+        name="Selling Price"
+        value={enteredSellingPrice}
+        onChangeHandler={sellingPriceChangeHandler}
+      />
       <li>
         <span>Amazon Fee: </span>
         <span>$13</span>

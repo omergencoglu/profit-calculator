@@ -6,12 +6,14 @@ function Input(props) {
         type="number"
         id={props.name}
         name={props.name}
-        placeholder="$0.00"
         min="0"
         max="10000"
         step="1"
         required="required"
+        value={props.value}
+        onChange={props.onChangeHandler}
       />
+      <span>$</span>
     </li>
   );
 }
