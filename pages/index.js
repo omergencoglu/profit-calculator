@@ -1,6 +1,7 @@
 import { Fragment } from "react";
-
 import Head from "next/head";
+
+import Card from "../components/UI/Card";
 
 export default function Home() {
   return (
@@ -9,8 +10,8 @@ export default function Home() {
         <title>Profit Calcultor</title>
         <meta name="description" content="Calculate profit of your products." />
       </Head>
-      <main className="grow h-14">
-        <div>Hellooooo</div>
+      <main className="grow flex items-center">
+        <Card />
       </main>
     </Fragment>
   );

@@ -4,10 +4,6 @@
 
 html,
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -21,4 +17,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#__next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
