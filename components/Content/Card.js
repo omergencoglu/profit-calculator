@@ -27,7 +27,34 @@ function Card() {
     reset: sellingPriceReset,
   } = useInput((value) => value.trim() !== "");
 
-  console.log(sellingPriceIsNumber);
+  const amazonFee = (enteredSellingPrice * 0.15).toFixed(2);
+
+  const netProfit = (
+    enteredSellingPrice -
+    amazonFee -
+    enteredShippingFee -
+    enteredPurchasePrice
+  ).toFixed(2);
+
+  let profitPercentage = ((netProfit * 100) / enteredPurchasePrice).toFixed(2);
+
+  let profitMargin = ((netProfit * 100) / enteredSellingPrice).toFixed(2);
+
+  if (profitPercentage === "Infinity") {
+    profitPercentage = 100;
+  }
+
+  if (profitMargin === "Infinity") {
+    profitMargin = 100;
+  }
+
+  if (isNaN(profitPercentage)) {
+    profitPercentage = 0;
+  }
+
+  if (isNaN(profitMargin)) {
+    profitMargin = 0;
+  }
 
   return (
     <ul>
@@ -48,19 +75,19 @@ function Card() {
       />
       <li>
         <span>Amazon Fee: </span>
-        <span>$13</span>
+        <span>{amazonFee}$</span>
       </li>
       <li>
         <span>Net Profit: </span>
-        <span>$13</span>
+        <span>{netProfit}$</span>
       </li>
       <li>
         <span>Profit Percentage: </span>
-        <span>13%</span>
+        <span>{profitPercentage}%</span>
       </li>
       <li>
         <span>Net Profit Margin: </span>
-        <span>13%</span>
+        <span>{profitMargin}%</span>
       </li>
     </ul>
   );
