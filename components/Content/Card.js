@@ -56,8 +56,25 @@ function Card() {
     profitMargin = 0;
   }
 
+  let dealStatus = "";
+
+  if (profitPercentage <= 0) {
+    dealStatus = "bad";
+  }
+
+  if (profitPercentage <= 50 && profitPercentage > 0) {
+    dealStatus = "fair";
+  }
+
+  if (profitPercentage > 50) {
+    dealStatus = "good";
+  }
+
+  console.log(profitPercentage);
+  console.log(dealStatus);
+
   return (
-    <ul>
+    <ul className="bg-white shadow-md rounded-lg p-0">
       <Input
         name="Purchase Price"
         value={enteredPurchasePrice}
@@ -73,20 +90,20 @@ function Card() {
         value={enteredSellingPrice}
         onChangeHandler={sellingPriceChangeHandler}
       />
-      <li>
-        <span>Amazon Fee: </span>
+      <li className="list justify-between">
+        <span>Amazon Fee</span>
         <span>{amazonFee}$</span>
       </li>
-      <li>
-        <span>Net Profit: </span>
+      <li className="list justify-between bg-cyan-300">
+        <span>Net Profit</span>
         <span>{netProfit}$</span>
       </li>
-      <li>
-        <span>Profit Percentage: </span>
+      <li className="list justify-between bg-teal-300">
+        <span>Profit Percentage</span>
         <span>{profitPercentage}%</span>
       </li>
-      <li>
-        <span>Net Profit Margin: </span>
+      <li className="list justify-between bg-emerald-300 rounded-b-lg">
+        <span>Net Profit Margin</span>
         <span>{profitMargin}%</span>
       </li>
     </ul>

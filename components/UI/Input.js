@@ -1,7 +1,7 @@
 function Input(props) {
   return (
-    <li>
-      <label htmlFor={props.name}>{props.name} :</label>
+    <li className="list border-b-2">
+      <label htmlFor={props.name}>{props.name}</label>
       <input
         type="number"
         id={props.name}
@@ -12,6 +12,7 @@ function Input(props) {
         required="required"
         value={props.value}
         onChange={props.onChangeHandler}
+        className="grow text-right outline-none"
       />
       <span>$</span>
     </li>

@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f6f6f9;
 }
 
 a {
@@ -25,4 +26,8 @@ a {
   justify-content: center;
   min-height: 100vh;
   flex-direction: column;
+}
+
+.list {
+  @apply flex items-center h-14 p-5 w-96  gap-1;
 }
