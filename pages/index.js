@@ -10,8 +10,8 @@ export default function Home() {
         <title>Profit Calcultor</title>
         <meta name="description" content="Calculate profit of your products." />
       </Head>
-      <main className="grow flex items-center justify-center flex-col select-none">
-        <span className="text-2xl m-4 text">Amazon FBM Profit Calculator</span>
+      <main className="grow flex items-center justify-center flex-col select-nonem">
+        <span className="text-2xl m-4 text">Amazon Profit Calculator</span>
         <Card />
       </main>
     </Fragment>

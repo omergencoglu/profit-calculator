@@ -16,7 +16,7 @@ function Input(props) {
       className="list border-b-2 cursor-pointer focus-within:bg-teal-100"
       onClick={clickHandler}
     >
-      <label htmlFor={props.name} className="cursor-pointer">
+      <label htmlFor={props.name} className="cursor-pointer whitespace-nowrap">
         {props.name}
       </label>
       <input
@@ -24,7 +24,7 @@ function Input(props) {
         id={props.name}
         name={props.name}
         placeholder="0"
-        className="grow text-right outline-none cursor-pointer focus:bg-teal-100 transition-colors duration-500"
+        className="grow text-right outline-none cursor-pointer focus:bg-teal-100 transition-colors duration-500 min-w-0"
         max="999999999"
         min="0"
         step="any"
