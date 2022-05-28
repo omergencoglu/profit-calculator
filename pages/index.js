@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Fragment>
       <Head>
-        <title>Profit Calcultor</title>
+        <title>Profit Calculator</title>
         <meta name="description" content="Calculate profit of your products." />
       </Head>
       <main className="grow flex items-center justify-center flex-col select-none whitespace-nowrap animate-init">
