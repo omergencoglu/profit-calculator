@@ -36,9 +36,9 @@ function Card() {
     enteredPurchasePrice
   ).toFixed(2);
 
-  let profitPercentage = ((netProfit * 100) / enteredPurchasePrice).toFixed(2);
+  let profitPercentage = Math.floor((netProfit * 100) / enteredPurchasePrice);
 
-  let profitMargin = ((netProfit * 100) / enteredSellingPrice).toFixed(2);
+  let profitMargin = Math.floor((netProfit * 100) / enteredSellingPrice);
 
   if (profitPercentage === "Infinity") {
     profitPercentage = 100;
