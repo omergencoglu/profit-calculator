@@ -16,7 +16,7 @@ function Input(props) {
       className="list border-b-2 cursor-pointer focus-within:bg-teal-100"
       onClick={clickHandler}
     >
-      <label htmlFor={props.name} className="cursor-pointer whitespace-nowrap">
+      <label htmlFor={props.name} className="cursor-pointer">
         {props.name}
       </label>
       <input
