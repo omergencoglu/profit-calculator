@@ -51,7 +51,7 @@ function Card() {
   }
 
   return (
-    <ul className="bg-stone-100 shadow-md rounded-lg p-0 overflow-hidden text-lg font-mono">
+    <ul className="bg-stone-100 shadow-md rounded-lg p-0 overflow-hidden text-lg font-mono mb-16">
       <Input
         name="Purchase Price"
         value={enteredPurchasePrice}
