@@ -1,6 +1,6 @@
 import useInput from "../../hooks/use-input";
 
-import Input from "../UI/Input";
+import Input from "./Input";
 
 function Card() {
   const {
@@ -51,7 +51,7 @@ function Card() {
   }
 
   return (
-    <ul className="bg-stone-100 shadow-md rounded-lg p-0 overflow-hidden text-lg font-mono ">
+    <ul className="bg-stone-100 shadow-md rounded-lg p-0 overflow-hidden text-lg font-mono">
       <Input
         name="Purchase Price"
         value={enteredPurchasePrice}
@@ -70,7 +70,17 @@ function Card() {
         onChangeHandler={sellingPriceChangeHandler}
         resetHandler={sellingPriceReset}
       />
-      <li className="list justify-between">
+      <li
+        className={`list justify-between ${
+          profitPercentage <= 0
+            ? "bg-rose-100"
+            : profitPercentage <= 50 && profitPercentage > 0
+            ? "bg-yellow-100"
+            : profitPercentage > 50
+            ? "bg-emerald-100"
+            : ""
+        }`}
+      >
         <span>Amazon Fee</span>
         <span className="font-semibold font-sans">
           {new Intl.NumberFormat("en-CA").format(amazonFee)} $
