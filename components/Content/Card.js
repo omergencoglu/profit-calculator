@@ -51,7 +51,7 @@ function Card() {
   }
 
   return (
-    <ul className="bg-zinc-50 shadow-md rounded-lg p-0 overflow-hidden text-lg">
+    <ul className="bg-stone-100 shadow-md rounded-lg p-0 overflow-hidden text-lg font-mono ">
       <Input
         name="Purchase Price"
         value={enteredPurchasePrice}
@@ -72,7 +72,9 @@ function Card() {
       />
       <li className="list justify-between">
         <span>Amazon Fee</span>
-        <span>{new Intl.NumberFormat("en-CA").format(amazonFee)} $</span>
+        <span className="font-semibold font-sans">
+          {new Intl.NumberFormat("en-CA").format(amazonFee)} $
+        </span>
       </li>
       <li
         className={`list justify-between ${
@@ -86,7 +88,9 @@ function Card() {
         }`}
       >
         <span>Net Profit</span>
-        <span>{new Intl.NumberFormat("en-CA").format(netProfit)} $</span>
+        <span className="font-semibold font-sans">
+          {new Intl.NumberFormat("en-CA").format(netProfit)} $
+        </span>
       </li>
       <li
         className={`list justify-between ${
@@ -100,7 +104,7 @@ function Card() {
         }`}
       >
         <span>Profit Percentage</span>
-        <span>{profitPercentage} %</span>
+        <span className="font-semibold font-sans">{profitPercentage} %</span>
       </li>
       <li
         className={`list justify-between ${
@@ -114,7 +118,7 @@ function Card() {
         }`}
       >
         <span>Net Profit Margin</span>
-        <span>{profitMargin} %</span>
+        <span className="font-semibold font-sans">{profitMargin} %</span>
       </li>
     </ul>
   );
