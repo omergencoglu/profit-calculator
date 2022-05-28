@@ -12,7 +12,7 @@ module.exports = {
         },
       },
       animation: {
-        init: "init 0.6s ease-in-out",
+        init: "init 0.6s cubic-bezier(0,.5,.25,1)",
       },
     },
     maxWidth: {
