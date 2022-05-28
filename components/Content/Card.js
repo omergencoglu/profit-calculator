@@ -56,23 +56,6 @@ function Card() {
     profitMargin = 0;
   }
 
-  let dealStatus = "";
-
-  if (profitPercentage <= 0) {
-    dealStatus = "bad";
-  }
-
-  if (profitPercentage <= 50 && profitPercentage > 0) {
-    dealStatus = "fair";
-  }
-
-  if (profitPercentage > 50) {
-    dealStatus = "good";
-  }
-
-  console.log(profitPercentage);
-  console.log(dealStatus);
-
   return (
     <ul className="bg-white shadow-md rounded-lg p-0">
       <Input
@@ -94,15 +77,45 @@ function Card() {
         <span>Amazon Fee</span>
         <span>{amazonFee}$</span>
       </li>
-      <li className="list justify-between bg-cyan-300">
+      <li
+        className={`list justify-between ${
+          profitPercentage <= 0
+            ? "bg-rose-200"
+            : profitPercentage <= 50 && profitPercentage > 0
+            ? "bg-yellow-200"
+            : profitPercentage > 50
+            ? "bg-emerald-200"
+            : ""
+        }`}
+      >
         <span>Net Profit</span>
         <span>{netProfit}$</span>
       </li>
-      <li className="list justify-between bg-teal-300">
+      <li
+        className={`list justify-between ${
+          profitPercentage <= 0
+            ? "bg-rose-300"
+            : profitPercentage <= 50 && profitPercentage > 0
+            ? "bg-yellow-300"
+            : profitPercentage > 50
+            ? "bg-emerald-300"
+            : ""
+        }`}
+      >
         <span>Profit Percentage</span>
         <span>{profitPercentage}%</span>
       </li>
-      <li className="list justify-between bg-emerald-300 rounded-b-lg">
+      <li
+        className={`list justify-between ${
+          profitPercentage <= 0
+            ? "bg-rose-400"
+            : profitPercentage <= 50 && profitPercentage > 0
+            ? "bg-yellow-400"
+            : profitPercentage > 50
+            ? "bg-emerald-400"
+            : ""
+        }   rounded-b-lg`}
+      >
         <span>Net Profit Margin</span>
         <span>{profitMargin}%</span>
       </li>

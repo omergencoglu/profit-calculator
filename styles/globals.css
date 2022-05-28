@@ -29,5 +29,5 @@ a {
 }
 
 .list {
-  @apply flex items-center h-14 p-5 w-96  gap-1;
+  @apply flex items-center h-14 p-5 w-96  gap-1 transition-colors duration-500;
 }
