@@ -76,7 +76,10 @@ export default function Document() {
           name="twitter:card"
           content="Easily calculate Amazon fee, profit, margin and more..."
         />
-        <meta name="twitter:url" content="https://omergencoglu.dev/" />
+        <meta
+          name="twitter:url"
+          content="https://profit-calculator.vercel.app/"
+        />
         <meta name="twitter:title" content="Amazon Profit Calculator" />
         <meta
           name="twitter:description"
@@ -84,7 +87,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://omergencoglu.dev/icons/android-chrome-192x192.png"
+          content="https://profit-calculator.vercel.app/icons/android-chrome-192x192.png"
         />
         <meta name="twitter:creator" content="@omergencogludev" />
         <meta property="og:type" content="website" />
@@ -94,10 +97,13 @@ export default function Document() {
           content="Easily calculate Amazon fee, profit, margin and more..."
         />
         <meta property="og:site_name" content="Amazon Profit Calculator" />
-        <meta property="og:url" content="https://omergencoglu.dev/" />
+        <meta
+          property="og:url"
+          content="https://profit-calculator.vercel.app/"
+        />
         <meta
           property="og:image"
-          content="https://omergencoglu.dev/icons/apple-touch-icon.png"
+          content="https://profit-calculator.vercel.app/icons/apple-touch-icon.png"
         />
       </Head>
       <body>
