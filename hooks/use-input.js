@@ -1,10 +1,7 @@
 import { useState } from "react";
 
-const useInput = (validateValue) => {
+const useInput = () => {
   const [enteredValue, setEnteredValue] = useState("");
-
-  const valueIsValid = validateValue(enteredValue);
-  const isNumber = !isNaN(enteredValue);
 
   const valueChangeHandler = (event) => {
     setEnteredValue(event.target.value);
@@ -16,8 +13,6 @@ const useInput = (validateValue) => {
 
   return {
     value: enteredValue,
-    isValid: valueIsValid,
-    isNumber,
     valueChangeHandler,
     reset,
   };

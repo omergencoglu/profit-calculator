@@ -5,24 +5,18 @@ import Input from "../UI/Input";
 function Card() {
   const {
     value: enteredPurchasePrice,
-    isValid: purchasePriceIsValid,
-    isNumber: purchasePriceIsNumber,
     valueChangeHandler: purchasePriceChangeHandler,
     reset: purchasePriceReset,
   } = useInput((value) => value.trim() !== "");
 
   const {
     value: enteredShippingFee,
-    isValid: shippingFeeIsValid,
-    isNumber: shippingFeeIsNumber,
     valueChangeHandler: shippingFeeChangeHandler,
     reset: shippingFeeReset,
   } = useInput((value) => value.trim() !== "");
 
   const {
     value: enteredSellingPrice,
-    isValid: sellingPriceIsValid,
-    isNumber: sellingPriceIsNumber,
     valueChangeHandler: sellingPriceChangeHandler,
     reset: sellingPriceReset,
   } = useInput((value) => value.trim() !== "");
@@ -57,25 +51,28 @@ function Card() {
   }
 
   return (
-    <ul className="bg-white shadow-md rounded-lg p-0">
+    <ul className="bg-white shadow-md rounded-lg p-0 overflow-hidden">
       <Input
         name="Purchase Price"
         value={enteredPurchasePrice}
         onChangeHandler={purchasePriceChangeHandler}
+        resetHandler={purchasePriceReset}
       />
       <Input
         name="Shipping Fee"
         value={enteredShippingFee}
         onChangeHandler={shippingFeeChangeHandler}
+        resetHandler={shippingFeeReset}
       />
       <Input
         name="Selling Price"
         value={enteredSellingPrice}
         onChangeHandler={sellingPriceChangeHandler}
+        resetHandler={sellingPriceReset}
       />
       <li className="list justify-between">
         <span>Amazon Fee</span>
-        <span>{amazonFee}$</span>
+        <span>{new Intl.NumberFormat("en-CA").format(amazonFee)} $</span>
       </li>
       <li
         className={`list justify-between ${
@@ -89,7 +86,7 @@ function Card() {
         }`}
       >
         <span>Net Profit</span>
-        <span>{netProfit}$</span>
+        <span>{new Intl.NumberFormat("en-CA").format(netProfit)} $</span>
       </li>
       <li
         className={`list justify-between ${
@@ -103,7 +100,7 @@ function Card() {
         }`}
       >
         <span>Profit Percentage</span>
-        <span>{profitPercentage}%</span>
+        <span>{profitPercentage} %</span>
       </li>
       <li
         className={`list justify-between ${
@@ -114,10 +111,10 @@ function Card() {
             : profitPercentage > 50
             ? "bg-emerald-400"
             : ""
-        }   rounded-b-lg`}
+        }`}
       >
         <span>Net Profit Margin</span>
-        <span>{profitMargin}%</span>
+        <span>{profitMargin} %</span>
       </li>
     </ul>
   );
