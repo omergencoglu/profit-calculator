@@ -13,7 +13,7 @@ function Input(props) {
 
   return (
     <li
-      className="list border-b-2 cursor-pointer focus-within:bg-stone-50 focus-within:text-xl focus-within:p-3"
+      className="list border-b-2 cursor-pointer focus-within:bg-stone-50 focus-within:scale-105"
       onClick={clickHandler}
     >
       <label htmlFor={props.name} className="cursor-pointer">
