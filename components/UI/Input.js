@@ -13,7 +13,7 @@ function Input(props) {
 
   return (
     <li
-      className="list border-b-2 cursor-pointer focus-within:bg-teal-100"
+      className="list border-b-2 cursor-pointer focus-within:bg-white focus-within:scale-105"
       onClick={clickHandler}
     >
       <label htmlFor={props.name} className="cursor-pointer">
@@ -24,7 +24,7 @@ function Input(props) {
         id={props.name}
         name={props.name}
         placeholder="0"
-        className="grow text-right outline-none cursor-pointer focus:bg-teal-100 transition-colors duration-500 min-w-0"
+        className="grow text-right outline-none cursor-pointer bg-zinc-50 focus:bg-white transition-colors duration-300 min-w-0"
         max="999999999"
         min="0"
         step="any"
