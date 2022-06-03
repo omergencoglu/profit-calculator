@@ -21,10 +21,17 @@ function Card() {
     reset: sellingPriceReset,
   } = useInput((value) => value.trim() !== "");
 
+  const {
+    value: enteredShippingCredit,
+    valueChangeHandler: shippingCreditChangeHandler,
+    reset: shippingCreditReset,
+  } = useInput((value) => value.trim() !== "");
+
   const amazonFee = (enteredSellingPrice * 0.15).toFixed(2);
 
   const netProfit = (
-    enteredSellingPrice -
+    +enteredShippingCredit +
+    +enteredSellingPrice -
     amazonFee -
     enteredShippingFee -
     enteredPurchasePrice
@@ -69,6 +76,12 @@ function Card() {
         value={enteredSellingPrice}
         onChangeHandler={sellingPriceChangeHandler}
         resetHandler={sellingPriceReset}
+      />
+      <Input
+        name="Shipping Credit"
+        value={enteredShippingCredit}
+        onChangeHandler={shippingCreditChangeHandler}
+        resetHandler={shippingCreditReset}
       />
       <li
         className={`list justify-between ${
