@@ -41,14 +41,6 @@ function Card() {
 
   let profitMargin = Math.floor((netProfit * 100) / enteredSellingPrice);
 
-  if (profitPercentage === "Infinity") {
-    profitPercentage = 100;
-  }
-
-  if (profitMargin === "Infinity") {
-    profitMargin = 100;
-  }
-
   if (isNaN(profitPercentage)) {
     profitPercentage = 0;
   }
